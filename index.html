@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="myApp">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Gutenberg</title>
     <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Black+Ops+One|Bungee+Shade|Butcherman|Cabin+Sketch|Cherry+Swash|Creepster|Delius+Unicase|Ewert|Fredericka+the+Great|Frijole|Hanalei|Homemade+Apple|Kotta+One|Londrina+Shadow|Merriweather|Monofett|Monoton|Peddana|Petit+Formal+Script|Princess+Sofia|Special+Elite|Underdog" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-animate.min.js"></script>
-    <script type="text/javascript" src="./app/app.js"></script>
-    <script type="text/javascript" src="./app/controllers.js"></script>
-    <link rel="stylesheet" href="./dist/css/style.css">
+    <script type="text/javascript" src="app/controllers.js"></script>
+    <link rel="stylesheet" href="dist/css/style.css">
   </head>
   <body>
     <h1>Hello</h1>
-    <div class="main" ng-view></div>
+    <div class="main" ng-controller="MyController">
+        <div class="search">
+          <h1>Author Directory</h1>
+          <h2>100 Popular Downloads from Project Gutenberg</h2>
+          <input ng-model="query" placeholder="Search for authors" autofocus />
+          <label class="displayinline">
+            Sort by:
+            <select ng-model="authorSort">
+              <option value="name">Author</option>
+              <option value="works">Works</option>
+            </select>
+          </label>
+          <label class="displayinline">
+            <input type="radio" ng-model="direction" name="direction" checked />
+            ascending
+          </label>
+          <label class="displayinline">
+            <input type="radio" ng-model="direction" name="direction" value="reverse" />
+            descending
+          </label>
+          <div class="clearfix"></div>
+        </div>
+          <ul class="authorlist">
+            <li class="author clearfix" ng-repeat="item in authors | filter: query | orderBy: authorSort:direction ">
+              <a href="{{ item.href }}" target="_blank">
+              <img ng-src="{{ item.cover }}" alt="Photo from {{ item.works }}"/>
+              <div class="info">
+                <h3>{{ item.name }}</h3>
+                <p> {{ item.works + " " + item.download}} </p>
+              </div>
+            </a>
+            </li>
+          </ul>
+    </div>
   </body>
 </html>
