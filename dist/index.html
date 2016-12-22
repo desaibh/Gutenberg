@@ -32,17 +32,17 @@
           </label>
           <div class="clearfix"></div>
         </div>
-          <ul class="authorlist">
-            <li class="author clearfix" ng-repeat="item in authors | filter: query | orderBy: authorSort:direction ">
-              <a href="{{ item.href }}" target="_blank">
-              <img ng-src="{{ item.cover }}" alt="Photo from {{ item.works }}"/>
-              <div class="info">
-                <h3>{{ item.name }}</h3>
-                <p> {{ item.works + " " + item.download}} </p>
-              </div>
-            </a>
-            </li>
-          </ul>
-    </div>
+        <ul class="authorlist">
+          <li class="author clearfix" ng-repeat="item in authors | filter: query | orderBy: authorSort:direction ">
+            <a href="{{ item.href }}" target="_blank">
+            <img ng-src="{{ item.cover }}" alt="Photo from {{ item.works }}"/>
+            <div class="info">
+              <h3>{{ item.name }}</h3>
+              <p> {{ item.works + " " + item.download}} </p>
+            </div>
+          </a>
+          </li>
+        </ul>
+  </div>
   </body>
 </html>
