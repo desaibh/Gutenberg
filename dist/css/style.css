@@ -4,8 +4,12 @@ html {
   background: -moz-linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8 75%);
   background: -o-linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8  75%);
   background: linear-gradient(141deg, #1c7ade 0%, #2292de 51%, #34a7e8  75%);
-  opacity: 0.85;
-  min-height: 100%;
+  background-image: url('../assets/bgImgUnsplash.jpg');
+  background-blend-mode: darken;
+  background-repeat: repeat;
+  background-size: contain;
+  opacity: 1;
+  /*min-height: 100%;*/
 } /* #023E54 #10AAC0 #145266*/ /* #0fb8ad #1fc8db #2cb5e8*/ /* #7ce3e3 #97e9e9 #AFEEEE*/
 body {
   margin: 0px;;
@@ -59,7 +63,8 @@ ol, ul {
 
 }
 .search {
-  background: #063642;
+  /*background: #063642;*/
+  background: #252424;
   color: #EEE8D5;
   width: 90%;
   margin: 0 auto;
@@ -121,7 +126,7 @@ ol, ul {
 }
 .authorlist {
   background: #EEE8D5;
-  opacity: 0.95;
+  opacity: 1;
   width: 50%;
   margin: 0 auto;
   border-radius: 20px;
@@ -177,4 +182,12 @@ ol, ul {
   -moz-border-radius: 20px;
   -o-border-radius: 20px;
   -ms-border-radius: 20px;
+}
+@media screen and (max-width: 680px) {
+    .authorlist {
+        width: 90%;
+    }
+    h2 {
+      line-height: 120%;
+    }
 }
