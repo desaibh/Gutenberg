@@ -1,9 +1,9 @@
 html {
-  background: -webkit-gradient(linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8  75%));
+  /*background: -webkit-gradient(linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8  75%));
   background: -webkit-linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8  75%);
   background: -moz-linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8 75%);
   background: -o-linear-gradient(141deg, #1c7ade 0%, #2292de 33%, #34a7e8  75%);
-  background: linear-gradient(141deg, #1c7ade 0%, #2292de 51%, #34a7e8  75%);
+  background: linear-gradient(141deg, #1c7ade 0%, #2292de 51%, #34a7e8  75%);*/
   background-image: url('../assets/bgImgUnsplash.jpg');
   background-blend-mode: darken;
   background-repeat: repeat;
